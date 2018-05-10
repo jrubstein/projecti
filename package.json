@@ -1,0 +1,27 @@
+{
+  "name": "projecti",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "jrubstein",
+  "license": "MIT",
+  "engines": {
+    "yarn": "1.x.x"
+  },
+  "scripts": {
+    "clean": "rm -rfv ./dist/server",
+    "build": "yarn clean && tsc",
+    "postinstall": "yarn build",
+    "build:watch": "yarn clean && tsc -w",
+    "build:restart": "nodemon --watch ./dist --inspect=0.0.0.0:9222 --nolazy ./dist/index.js",
+    "start": "node -r dotenv/config ./dist/index.js"
+  },
+  "devDependencies": {
+    "@types/koa": "^2.0.45",
+    "dotenv": "^5.0.1",
+    "nodemon": "^1.17.4",
+    "typescript": "^2.8.3"
+  },
+  "dependencies": {
+    "koa": "^2.5.1"
+  }
+}
