@@ -14,6 +14,11 @@ before_script:
 script: yarn build
 
 after_success: docker build -t projecti .
+deply:
+  provier: script
+  script: bash ./scripts/docker_push.sh
+  on:
+    branch: master
 cache:
   directories:
     - "node_modules"
