@@ -12,7 +12,7 @@ before_script:
   - sleep 15
 script: yarn build
 
-after_success: docker build -t jrubstein/projecti .
+after_success: docker build -t jrubstein/projecti:$TRAVIS_COMMIT .
 
 deploy:
   provider: script
