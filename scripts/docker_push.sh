@@ -1,3 +1,3 @@
 #!/bin/bash
 echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-docker push jrubstein/projecti
+docker push jrubstein/projecti:$TRAVIS_COMMIT
